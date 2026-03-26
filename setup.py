@@ -7,10 +7,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Simon Sliman Du Sable",
-    url="https://humanagent.net",
-    project_urls={
-        "Repository": "https://github.com/SimonSliman/humanagent-python",
-    },
+    url="https://github.com/SimonSliman/humanagent-python",
     packages=find_packages(),
     python_requires=">=3.8",
     install_requires=[

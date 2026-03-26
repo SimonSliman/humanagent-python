@@ -12,6 +12,8 @@ Usage:
         sla="30min",
         budget=25.00
     )
+    print(result["status"])  # "completed"
+    print(result["result"]["approved"])  # True
 """
 
 import time
@@ -137,7 +139,14 @@ class HumanAgent:
         If wait=False, returns immediately after creation.
 
         Args:
-            ... (same as create_checkpoint)
+            task: Description of what the human needs to do.
+            credential: Required credential, e.g. "bar_licensed:US".
+            sla: Time limit. "90s", "5min", "30min", "1hr", "4hr".
+            budget: Maximum USD willing to pay.
+            priority: "urgent", "standard", or "batch".
+            payload_url: URL to a document/file the human needs to review.
+            payload_meta: Additional context as a dict.
+            callback_url: Webhook URL to receive the result.
             wait: Block until result. Default True.
             poll_interval: Seconds between polls. Default 5.
             max_wait: Maximum seconds to wait. Default None (wait until SLA expires).
